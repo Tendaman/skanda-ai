@@ -229,7 +229,7 @@ export default function InputText({
       formData.append("image", screenshotFile);
 
       console.log("Sending screenshot for analysis...");
-      const response = await fetch("http://localhost:8000/screen/analyze", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/screen/analyze`, {
         method: "POST",
         body: formData,
       });
